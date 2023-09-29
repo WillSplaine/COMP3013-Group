@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638315968660811472
+      ticks: 638315980546530396
     m_Hash: 3258162238
   m_LockFileStatus:
     m_FilePath: H:/Git/COMP3013-Group/Asylum/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638315968662311317
+      ticks: 638315980547331960
     m_Hash: 3385906257
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
