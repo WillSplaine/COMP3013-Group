@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
             RaycastHit hitHigh;
             if (!Physics.Raycast(RayCastKnee.transform.position, transform.TransformDirection(Vector3.forward), out hitHigh, 0.2f)) 
             {
-                rb.position -= new Vector3(0f, -smoothMotion, 0f);
+                rb.position -= new Vector3(0f, -smoothMotion * Time.deltaTime, 0f);
             }
         }
     }
