@@ -21,6 +21,16 @@ public class PlayerMovement : MonoBehaviour
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
 
+    [Header("Player Stair Climb")]
+
+    [SerializeField] GameObject RayCastKnee;
+
+    [SerializeField] GameObject RayCastToes;
+
+    [SerializeField] float stairHeight = 0.4f;
+
+    [SerializeField] float smoothMotion = 0.02f;
+
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
@@ -43,13 +53,14 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
+        RayCastKnee.transform.position = new Vector3(RayCastKnee.transform.position.x, stairHeight, RayCastKnee.transform.position.z);
     }
 
     private void Update()
     {
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-
+        stairClimb();
         MyInput();
         SpeedControl();
 
@@ -118,4 +129,25 @@ public class PlayerMovement : MonoBehaviour
     {
         readyToJump = true;
     }
+
+    void stairClimb()
+    {
+        RaycastHit hitLow;
+        if (Physics.Raycast(RayCastToes.transform.position, transform.TransformDirection(Vector3.forward), out hitLow, 0.1f))
+        {
+            RaycastHit hitHigh;
+            if (!Physics.Raycast(RayCastKnee.transform.position, transform.TransformDirection(Vector3.forward), out hitHigh, 0.2f)) 
+            {
+                rb.position -= new Vector3(0f, -smoothMotion, 0f);
+            }
+        }
+    }
 }
+
+
+        
+
+               
+                
+        
+    
