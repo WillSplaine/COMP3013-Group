@@ -24,9 +24,10 @@ public class UI_Controller : MonoBehaviour
     [Header("Sanity")]
     public Slider slider_sanity;
     public static int sanityValue; //readable between scripts
-    public int initialSanityValue = 1;
-    public int maxSanityValue;
+    public int initialSanityValue = 1; //starting value
+    public int maxSanityValue; //max value
     public float SanityTickDown = 0.1f; //seconds// rate that sanity decreases
+    public TextMeshProUGUI txt_Objective = null; //
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class UI_Controller : MonoBehaviour
 
         slider_sanity_setup();
         StartCoroutine(DecreaseSanityOverTime());
+        StartCoroutine(TextVanishOverTime());
     }
 
     void Update()
@@ -80,6 +82,21 @@ public class UI_Controller : MonoBehaviour
         {
             yield return new WaitForSeconds(SanityTickDown);
             Sanity_decr();
+        }
+    }
+
+    IEnumerator TextVanishOverTime(float fadeSpeed = 0.15f)
+    {
+        float fadeAmount;
+        Color objectColor = txt_Objective.GetComponent<TextMeshProUGUI>().color;
+
+        while (txt_Objective.GetComponent<TextMeshProUGUI>().color.a > 0)
+        {
+            fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
+
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            txt_Objective.GetComponent<TextMeshProUGUI>().color = objectColor;
+            yield return null;
         }
     }
 
