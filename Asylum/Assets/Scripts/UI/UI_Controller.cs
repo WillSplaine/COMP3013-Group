@@ -31,7 +31,7 @@ public class UI_Controller : MonoBehaviour
     void Start()
     {
         StartCoroutine(FadeBlackOutSquare(false, adj_FadeInSpeed));
-
+        
         isPaused = false;
         pauseMenu.SetActive(isPaused);
         Button_resume.SetActive(isPaused);
@@ -154,8 +154,10 @@ public class UI_Controller : MonoBehaviour
     //When the script is started the values are initiated and will start at these values
     public void slider_sanity_setup()
     {
-        sanityValue = initialSanityValue;
+        
         slider_sanity.maxValue = maxSanityValue; //sets the  limit for the health
+        initialSanityValue = maxSanityValue;
+        sanityValue = initialSanityValue;
     }
     //Mental Health
     public void Sanity_decr()
