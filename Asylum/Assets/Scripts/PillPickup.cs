@@ -30,7 +30,7 @@ public class PillPickup : MonoBehaviour
             audioData.Play(0);
             audioData1.Play(0);
             PillsCollected++;
-            UI_Controller.sanityValue++; 
+            UI_Controller.sanityValue+= 150; 
             
             //debug
             UnityEngine.Debug.Log("You currently have taken " + PillPickup.PillsCollected + " pills.");

@@ -9,8 +9,9 @@ public class UI_Controller : MonoBehaviour
     [Header("Menu Game Objects")]
     public GameObject pauseMenu = null;
     public GameObject Button_resume = null;
-    public GameObject GameWon = null;
-    public GameObject GameLost = null;
+    public GameObject obj_GameOver = null;
+    //public GameObject GameLost = null;
+    public TextMeshProUGUI txt_GameEnd = null;
 
     private bool isPaused;
     private bool isResume;
@@ -25,6 +26,7 @@ public class UI_Controller : MonoBehaviour
     public static int sanityValue; //readable between scripts
     public int initialSanityValue = 1;
     public int maxSanityValue;
+    public float SanityTickDown = 0.1f; //seconds// rate that sanity decreases
 
     void Start()
     {
@@ -33,8 +35,8 @@ public class UI_Controller : MonoBehaviour
         isPaused = false;
         pauseMenu.SetActive(isPaused);
         Button_resume.SetActive(isPaused);
-        GameWon.SetActive(isPaused);
-        GameLost.SetActive(isPaused);
+        obj_GameOver.SetActive(isPaused);
+        //GameLost.SetActive(isPaused);
 
         slider_sanity_setup();
         StartCoroutine(DecreaseSanityOverTime());
@@ -43,50 +45,41 @@ public class UI_Controller : MonoBehaviour
     void Update()
     {
         slider_sanity.value = sanityValue; //sets current value
+        if (sanityValue <= 0) //game over
+        {
+            GameEnd.GameProgState = 2;
+        }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && GameEnd.GameProgState == 0) //actively playing
+        switch (GameEnd.GameProgState)
         {
-            isResume = true;
-            PauseFunction();
+            case 1:
+                print("Game Won");
+                isResume = false;
+                StartCoroutine(FadeBlackOutSquare(true, adj_FadeOutSpeed, true));
+                break;
+
+            case 2:
+                print("Game Lost");
+                isResume = false;
+                StartCoroutine(FadeBlackOutSquare(true, adj_FadeOutSpeed, true));
+                break;
+
+            default:
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    isResume = true;
+                    PauseFunction();
+                }
+                break;
         }
-        if (GameEnd.GameProgState == 1) //game won 
-        {
-            print("Game Won");
-            isResume = false;
-            StartCoroutine(FadeBlackOutSquare(true, adj_FadeOutSpeed, true));
-        }
-        DeathFunction();
     }
 
     IEnumerator DecreaseSanityOverTime()
     {
         while (true)
         {
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(SanityTickDown);
             Sanity_decr();
-        }
-    }
-
-    public void DeathFunction()
-    {
-        if (sanityValue < 1)
-        {
-            if (isResume == false)
-            {
-                isPaused = true;
-                Button_resume.SetActive(false);
-            }
-            else
-            {
-                Button_resume.SetActive(true);
-                isPaused = !isPaused;
-            }
-
-            Time.timeScale = isPaused ? 0 : 1;
-            GameLost.SetActive(isPaused);
-            Cursor.visible = isPaused;
-            Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
-            //print(isPaused); //debug
         }
     }
 
@@ -128,9 +121,19 @@ public class UI_Controller : MonoBehaviour
             if (GameOver)
             {
                 PauseFunction();
-                GameWon.SetActive(true);
                 pauseMenu.SetActive(false);
+                obj_GameOver.SetActive(true);
+                switch (GameEnd.GameProgState)
+                {
+                    case 1:
+                        txt_GameEnd.text = "You Escaped!";
+                        break;
+                    case 2:
+                        txt_GameEnd.text = "You Died!";
+                        break;
+                }
                 GameEnd.GameProgState = 0;
+                 
             }
         }
         else
@@ -163,10 +166,8 @@ public class UI_Controller : MonoBehaviour
     public void Sanity_incr()
     {
         print("Sanity Increased");
-        slider_sanity.value += 1; 
+        slider_sanity.value++; 
     }
-
-
 }
 
 
