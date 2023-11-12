@@ -156,7 +156,7 @@ public class UI_Controller : MonoBehaviour
     {
         
         slider_sanity.maxValue = maxSanityValue; //sets the  limit for the health
-        initialSanityValue = maxSanityValue;
+        //initialSanityValue = maxSanityValue; not needed as value is set in inspector
         sanityValue = initialSanityValue;
     }
     //Mental Health

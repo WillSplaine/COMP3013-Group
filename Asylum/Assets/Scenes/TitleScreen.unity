@@ -32666,7 +32666,7 @@ MonoBehaviour:
   controlsImage: {fileID: 59552843}
   Click: {fileID: 444602203}
   blackOutSquare: {fileID: 1769573610}
-  adj_FadeInSpeed: 1
+  adj_FadeInSpeed: 5
   adj_FadeOutSpeed: 1
 --- !u!114 &1819015457
 MonoBehaviour:
