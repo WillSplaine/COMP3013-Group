@@ -35,6 +35,7 @@ public class UI_Controller : MonoBehaviour
         GameWon.SetActive(isPaused);
 
         slider_sanity_setup();
+        StartCoroutine(DecreaseSanityOverTime());
     }
 
     void Update()
@@ -51,6 +52,15 @@ public class UI_Controller : MonoBehaviour
             print("Game Won");
             isResume = false;
             StartCoroutine(FadeBlackOutSquare(true, adj_FadeOutSpeed, true));
+        }
+    }
+
+    IEnumerator DecreaseSanityOverTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(8);
+            Sanity_decr();
         }
     }
 
@@ -122,7 +132,7 @@ public class UI_Controller : MonoBehaviour
     public void Sanity_decr()
     {
         print("Sanity Decreased");
-        slider_sanity.value -= 1; 
+        sanityValue--; 
     }
     public void Sanity_incr()
     {

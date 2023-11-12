@@ -60,12 +60,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\MyDoorCont.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCam.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Hover.cs" />
     <Compile Include="Assets\Scripts\UI\MENUSCREEN.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_player.cs" />
+    <Compile Include="Assets\Scripts\UI\GameEnd.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInteractions.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\PillPickup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
