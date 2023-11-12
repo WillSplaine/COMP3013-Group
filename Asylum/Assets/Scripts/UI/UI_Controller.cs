@@ -10,6 +10,7 @@ public class UI_Controller : MonoBehaviour
     public GameObject pauseMenu = null;
     public GameObject Button_resume = null;
     public GameObject GameWon = null;
+    public GameObject GameLost = null;
 
     private bool isPaused;
     private bool isResume;
@@ -33,6 +34,7 @@ public class UI_Controller : MonoBehaviour
         pauseMenu.SetActive(isPaused);
         Button_resume.SetActive(isPaused);
         GameWon.SetActive(isPaused);
+        GameLost.SetActive(isPaused);
 
         slider_sanity_setup();
         StartCoroutine(DecreaseSanityOverTime());
@@ -53,14 +55,38 @@ public class UI_Controller : MonoBehaviour
             isResume = false;
             StartCoroutine(FadeBlackOutSquare(true, adj_FadeOutSpeed, true));
         }
+        DeathFunction();
     }
 
     IEnumerator DecreaseSanityOverTime()
     {
         while (true)
         {
-            yield return new WaitForSeconds(8);
+            yield return new WaitForSeconds(8f);
             Sanity_decr();
+        }
+    }
+
+    public void DeathFunction()
+    {
+        if (sanityValue < 1)
+        {
+            if (isResume == false)
+            {
+                isPaused = true;
+                Button_resume.SetActive(false);
+            }
+            else
+            {
+                Button_resume.SetActive(true);
+                isPaused = !isPaused;
+            }
+
+            Time.timeScale = isPaused ? 0 : 1;
+            GameLost.SetActive(isPaused);
+            Cursor.visible = isPaused;
+            Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
+            //print(isPaused); //debug
         }
     }
 

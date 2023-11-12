@@ -10,6 +10,7 @@ public class PillPickup : MonoBehaviour
     public static int PillsCollected;
     public SphereCollider c_pill;
     public AudioSource audioData;
+    public AudioSource audioData1;
     public GameObject PillObj;
 
     void Awake()
@@ -27,6 +28,7 @@ public class PillPickup : MonoBehaviour
 
             //audioData = GetComponent<AudioSource>();
             audioData.Play(0);
+            audioData1.Play(0);
             PillsCollected++;
             UI_Controller.sanityValue++; 
             
