@@ -36,6 +36,13 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
 
+    [Header("Slope Movement")]
+    public float maxSloapAngle;
+    private RaycastHit slopeHit;
+    private bool exitingSlope;
+
+   
+
     public Transform orientation;
 
     float horizontalInput;
@@ -53,14 +60,14 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
-        RayCastKnee.transform.position = new Vector3(RayCastKnee.transform.position.x, stairHeight, RayCastKnee.transform.position.z);
+       // RayCastKnee.transform.position = new Vector3(RayCastKnee.transform.position.x, stairHeight, RayCastKnee.transform.position.z);
     }
 
     private void Update()
     {
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-        stairClimb();
+        //stairClimb();
         MyInput();
         SpeedControl();
 
@@ -94,27 +101,45 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        // on ground
-        if (grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
-        // in air
+        if (OnSlope() && !exitingSlope)
+        {
+            rb.AddForce(GetSlopeMoveDir() * moveSpeed * 20f, ForceMode.Force);
+            if (rb.velocity.y > 0)
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+
+        }
+        else if (grounded)
+        {
+            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        }
         else if (!grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        {
+            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            rb.AddForce(moveDirection.normalized * moveSpeed * 4f, ForceMode.Force);
+
+        }
+        rb.useGravity = !OnSlope();
     }
 
     private void SpeedControl()
     {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        // limit velocity if needed
-        if (flatVel.magnitude > moveSpeed)
+        if (OnSlope())
         {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            if (rb.velocity.magnitude > moveSpeed)
+                rb.velocity = rb.velocity.normalized * moveSpeed;
+        }
+        else
+        {
+            Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            if (flatVel.magnitude > moveSpeed)
+            {
+                Vector3 limitedv = flatVel.normalized * moveSpeed;
+                rb.velocity = new Vector3(limitedv.x, rb.velocity.y, limitedv.z);
+            }
         }
     }
 
@@ -130,17 +155,32 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
-    void stairClimb()
+   // void stairClimb()
+   // {
+    //    RaycastHit hitLow;
+    //    if (Physics.Raycast(RayCastToes.transform.position, transform.TransformDirection(Vector3.forward), out hitLow, 0.1f))
+    //    {
+     //       RaycastHit hitHigh;
+     //       if (!Physics.Raycast(RayCastKnee.transform.position, transform.TransformDirection(Vector3.forward), out hitHigh, 0.2f)) 
+     //       {
+     //           rb.position -= new Vector3(0f, -smoothMotion * Time.deltaTime, 0f);
+     //       }
+     //   }
+   // }
+
+    private bool OnSlope()
     {
-        RaycastHit hitLow;
-        if (Physics.Raycast(RayCastToes.transform.position, transform.TransformDirection(Vector3.forward), out hitLow, 0.1f))
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
         {
-            RaycastHit hitHigh;
-            if (!Physics.Raycast(RayCastKnee.transform.position, transform.TransformDirection(Vector3.forward), out hitHigh, 0.2f)) 
-            {
-                rb.position -= new Vector3(0f, -smoothMotion * Time.deltaTime, 0f);
-            }
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSloapAngle && angle != 0;
         }
+        return false;
+    }
+
+    private Vector3 GetSlopeMoveDir()
+    {
+        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 }
 
