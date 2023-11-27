@@ -14,7 +14,7 @@ public class MENUSCREEN : MonoBehaviour
     public static bool hasWon = false;
 
     [Header("Transition Settings")]
-    public GameObject blackOutSquare;
+    [SerializeField] GameObject blackOutSquare;
     [Range(0.1f, 5.0f)] public float adj_FadeInSpeed;
     [Range(0.1f, 5.0f)] public float adj_FadeOutSpeed;
 

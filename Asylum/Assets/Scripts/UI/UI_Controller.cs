@@ -7,50 +7,38 @@ using TMPro;
 public class UI_Controller : MonoBehaviour
 {
     [Header("Menu Game Objects")]
-    public GameObject pauseMenu = null;
-    public GameObject Button_resume = null;
-    public GameObject obj_GameOver = null;
-    //public GameObject GameLost = null;
-    public TextMeshProUGUI txt_GameEnd = null;
+    [SerializeField] GameObject pauseMenu = null;
+    [SerializeField] GameObject Button_resume = null;
+    [SerializeField] GameObject obj_GameOver = null;
+    //[SerializeField] GameObject GameLost = null;
+    [SerializeField] TextMeshProUGUI txt_GameEnd = null;
 
     private bool isPaused;
     private bool isResume;
 
     [Header("Transition Settings")]
-    public GameObject blackOutSquare;
+    [SerializeField] GameObject blackOutSquare;
     [Range(0.1f, 5.0f)] public float adj_FadeInSpeed;
     [Range(0.1f, 5.0f)] public float adj_FadeOutSpeed;
 
-    [Header("Sanity")]
-    public Slider slider_sanity;
-    public static int sanityValue; //readable between scripts
-    public int initialSanityValue = 1; //starting value
-    public int maxSanityValue; //max value
-    public float SanityTickDown = 0.1f; //seconds// rate that sanity decreases
-    public TextMeshProUGUI txt_Objective = null; //
+    [Header("HUD")]
+    [SerializeField] TextMeshProUGUI txt_Objective = null; 
 
     void Start()
     {
         StartCoroutine(FadeBlackOutSquare(false, adj_FadeInSpeed));
-        
+
         isPaused = false;
         pauseMenu.SetActive(isPaused);
         Button_resume.SetActive(isPaused);
         obj_GameOver.SetActive(isPaused);
         //GameLost.SetActive(isPaused);
 
-        slider_sanity_setup();
-        StartCoroutine(DecreaseSanityOverTime());
         StartCoroutine(TextVanishOverTime());
     }
 
     void Update()
     {
-        slider_sanity.value = sanityValue; //sets current value
-        if (sanityValue <= 0) //game over
-        {
-            GameEnd.GameProgState = 2;
-        }
 
         switch (GameEnd.GameProgState)
         {
@@ -73,15 +61,6 @@ public class UI_Controller : MonoBehaviour
                     PauseFunction();
                 }
                 break;
-        }
-    }
-
-    IEnumerator DecreaseSanityOverTime()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(SanityTickDown);
-            Sanity_decr();
         }
     }
 
@@ -150,7 +129,7 @@ public class UI_Controller : MonoBehaviour
                         break;
                 }
                 GameEnd.GameProgState = 0;
-                 
+
             }
         }
         else
@@ -165,28 +144,9 @@ public class UI_Controller : MonoBehaviour
             }
         }
     }
-
-
-    //Sanity Functions
-    //When the script is started the values are initiated and will start at these values
-    public void slider_sanity_setup()
-    {
-        
-        slider_sanity.maxValue = maxSanityValue; //sets the  limit for the health
-        //initialSanityValue = maxSanityValue; not needed as value is set in inspector
-        sanityValue = initialSanityValue;
-    }
-    //Mental Health
-    public void Sanity_decr()
-    {
-        print("Sanity Decreased");
-        sanityValue--; 
-    }
-    public void Sanity_incr()
-    {
-        print("Sanity Increased");
-        slider_sanity.value++; 
-    }
 }
+
+
+
 
 

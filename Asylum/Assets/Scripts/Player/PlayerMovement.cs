@@ -27,9 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] GameObject RayCastToes;
 
-    [SerializeField] float stairHeight = 0.4f;
-
-    [SerializeField] float smoothMotion = 0.02f;
+    //[SerializeField] float stairHeight = 0.4f; //Value is assigned but never used
+    //[SerializeField] float smoothMotion = 0.02f; //Value is assigned but never used
 
     [Header("Ground Check")]
     public float playerHeight;
