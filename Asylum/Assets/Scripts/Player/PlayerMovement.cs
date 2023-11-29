@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-
+    public float origMoveSpeed;
+    public float currentSpeed;
     public float groundDrag;
 
     public float jumpForce;
@@ -60,6 +61,9 @@ public class PlayerMovement : MonoBehaviour
 
         readyToJump = true;
        // RayCastKnee.transform.position = new Vector3(RayCastKnee.transform.position.x, stairHeight, RayCastKnee.transform.position.z);
+
+        origMoveSpeed = moveSpeed;
+        currentSpeed = origMoveSpeed;
     }
 
     private void Update()
@@ -124,8 +128,19 @@ public class PlayerMovement : MonoBehaviour
         rb.useGravity = !OnSlope();
     }
 
-    private void SpeedControl()
+    public void SpeedControl()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            currentSpeed = origMoveSpeed * 1.5f; 
+        }
+        else
+        {
+            currentSpeed = origMoveSpeed;
+        }
+
+        moveSpeed = currentSpeed;
+
         if (OnSlope())
         {
             if (rb.velocity.magnitude > moveSpeed)
