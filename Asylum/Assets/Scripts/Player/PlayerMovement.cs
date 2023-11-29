@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            currentSpeed = origMoveSpeed * 1.5f; 
+            currentSpeed = origMoveSpeed * 1.7f; 
         }
         else
         {
