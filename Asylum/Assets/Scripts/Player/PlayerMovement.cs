@@ -5,16 +5,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+
     [Header("Movement")]
     public float moveSpeed;
     public float origMoveSpeed;
     public float currentSpeed;
     public float groundDrag;
+    public float crouchHeight = 1f;
+    public float standHeight = 2f;
 
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
+    private bool isCrouched = false;
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -51,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
-
+    public CapsuleCollider playerCollider;
 
 
     private void Start()
@@ -74,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
 
+
         // handle drag
         if (grounded)
             rb.drag = groundDrag;
@@ -83,6 +89,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Crouch();
+        }
         MovePlayer();
     }
 
@@ -169,6 +179,19 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
+    private void Crouch()
+    {
+        isCrouched = !isCrouched;
+        if (isCrouched) {
+            playerCollider.height = crouchHeight;
+        }
+        else
+        {
+            playerCollider.height = standHeight;
+        }
+
+    }
+
    // void stairClimb()
    // {
     //    RaycastHit hitLow;
@@ -196,6 +219,8 @@ public class PlayerMovement : MonoBehaviour
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
+
+    
 }
 
 
