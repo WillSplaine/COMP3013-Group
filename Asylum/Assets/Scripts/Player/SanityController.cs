@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Diagnostics;
 
 public class SanityController : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class SanityController : MonoBehaviour
     [SerializeField] int maxSanityValue; //max value
     public float SanityTickDown = 0.1f; //seconds// rate that sanity decreases
     public static float SanityRateMultiplier = 1.0f; //multiplier for sanity decrease rate
+
+    [SerializeField] Image SanitySliderFill;
+    [SerializeField] Color32 SanitySliderColorSLOW;
+    [SerializeField] Color32 SanitySliderColorFAST;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +32,22 @@ public class SanityController : MonoBehaviour
     {
         slider_sanity.value = sanityValue; //sets current value
         sanityValueReader = sanityValue; //display current value
+
+        if (SanityController.SanityRateMultiplier > 1.0f)
+        {
+            SanitySliderFill.color = SanitySliderColorSLOW; //white
+        }
+        if (SanityRateMultiplier <= 1.0f)
+        {
+            SanitySliderFill.color = SanitySliderColorFAST; //deep red
+        }
+        //SanitySliderFill.color = Color.Lerp(8C1E1E, Color.green, slider_sanity.value / maxSanityValue);
+
         if (sanityValue <= 0) //game over
         {
             GameEnd.GameProgState = 2;
         }
+
     }
 
     IEnumerator DecreaseSanityOverTime()

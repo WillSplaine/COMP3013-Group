@@ -42,21 +42,34 @@ public class UI_Controller : MonoBehaviour
 
         switch (GameEnd.GameProgState)
         {
-            case 1:
-                print("Game Won");
+            
+            case 1: //Game Won
+                //print("Game Won");
                 isResume = false;
                 StartCoroutine(FadeBlackOutSquare(true, adj_FadeOutSpeed, true));
                 break;
 
-            case 2:
-                print("Game Lost");
+            case 2: //Game Lost
+                //print("Game Lost");
                 isResume = false;
                 StartCoroutine(FadeBlackOutSquare(true, adj_FadeOutSpeed, true));
                 break;
-
-            default:
+            case 3: //Game paused, in settings
+                isResume = false;
+                PauseFunction();
+                pauseMenu.SetActive(false);
+                break;
+            case 4: //transitioning from Settings to Paused
+                pauseMenu.SetActive(true);
+                Button_resume.SetActive(true);
+                isResume = true;
+                isPaused = true;
+                GameEnd.GameProgState = 0;
+                break;
+            default: //Walking and pausing 
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
+                    pauseMenu.SetActive(true);
                     isResume = true;
                     PauseFunction();
                 }
@@ -91,12 +104,10 @@ public class UI_Controller : MonoBehaviour
             Button_resume.SetActive(true);
             isPaused = !isPaused;
         }
-
         Time.timeScale = isPaused ? 0 : 1;
         pauseMenu.SetActive(isPaused);
         Cursor.visible = isPaused;
         Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
-        //print(isPaused); //debug
     }
 
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, float fadeSpeed = 1, bool GameOver = false)

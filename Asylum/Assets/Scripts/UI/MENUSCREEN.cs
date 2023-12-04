@@ -8,8 +8,10 @@ using System.Diagnostics;
 
 public class MENUSCREEN : MonoBehaviour
 {
-    public GameObject controlsImage = null;
-    public AudioSource Click;
+    [Header("Menu Game Objects")]
+    [SerializeField] GameObject controlsImage = null;    
+    [SerializeField] GameObject SettingMenu = null;
+    [SerializeField] AudioSource Click;
 
     public static bool hasWon = false;
 
@@ -19,6 +21,7 @@ public class MENUSCREEN : MonoBehaviour
     [Range(0.1f, 5.0f)] public float adj_FadeOutSpeed;
 
     private bool showControlEnabled;
+    private bool showSettingEnabled;
 
     void Start()
     {
@@ -27,7 +30,9 @@ public class MENUSCREEN : MonoBehaviour
         Time.timeScale = 1;
 
         showControlEnabled = false;
+        showSettingEnabled = false;
         controlsImage.SetActive(showControlEnabled);
+        SettingMenu.SetActive(showSettingEnabled);
         StartCoroutine(FadeBlackOutSquare(false, adj_FadeInSpeed));
     }
 
@@ -35,10 +40,13 @@ public class MENUSCREEN : MonoBehaviour
     public void startGame() 
     {
         Click.Play();
+        GameEnd.GameProgState = 0;
+        showControlEnabled = false; showSettingEnabled = false;
+        controlsImage.SetActive(showControlEnabled);
+        SettingMenu.SetActive(showSettingEnabled);
         StartCoroutine(FadeBlackOutSquare(true, adj_FadeOutSpeed, true));
         print("Game Started");
     }
-
 
    public void return2menu()
     {
@@ -51,6 +59,14 @@ public class MENUSCREEN : MonoBehaviour
         Click.Play();
         showControlEnabled = !showControlEnabled;
         controlsImage.SetActive(showControlEnabled);
+    }
+    public void showSettings()
+    {
+        Click.Play();
+        print("settings");
+        GameEnd.GameProgState = !showSettingEnabled ? 3 : 4; //game paused and in settings
+        showSettingEnabled = !showSettingEnabled;
+        SettingMenu.SetActive(showSettingEnabled);
     }
     public void exitgame()
     {

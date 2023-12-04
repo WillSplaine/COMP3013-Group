@@ -21,6 +21,7 @@ public class JumpScares : MonoBehaviour
                 // Trigger the animation by setting a parameter
                 audioData1.Play(0);
                 animator.SetTrigger("Scare");
+                SanityController.sanityValue -= 100;
             }
             else
             {
