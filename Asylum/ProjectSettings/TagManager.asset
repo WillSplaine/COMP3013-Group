@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - LightSource
+  - Crouched
   layers:
   - Default
   - TransparentFX
