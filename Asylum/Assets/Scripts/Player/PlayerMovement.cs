@@ -12,20 +12,24 @@ public class PlayerMovement : MonoBehaviour
     public float origMoveSpeed;
     public float currentSpeed;
     public float groundDrag;
-    public float crouchHeight = 1f;
-    public float standHeight = 2f;
+
 
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
-    private bool isCrouched = false;
+
+    [Header("Crouching")]
+    public float crouchSpeed;
+    public float crouchYScale;
+    public float beginYScale;
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode crouchKey = KeyCode.C;
 
     [Header("Player Stair Climb")]
 
@@ -46,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     private RaycastHit slopeHit;
     private bool exitingSlope;
 
-   
+
 
     public Transform orientation;
 
@@ -65,10 +69,12 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
-       // RayCastKnee.transform.position = new Vector3(RayCastKnee.transform.position.x, stairHeight, RayCastKnee.transform.position.z);
+        // RayCastKnee.transform.position = new Vector3(RayCastKnee.transform.position.x, stairHeight, RayCastKnee.transform.position.z);
 
         origMoveSpeed = moveSpeed;
         currentSpeed = origMoveSpeed;
+
+        beginYScale = transform.localScale.y;
     }
 
     private void Update()
@@ -89,10 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Crouch();
-        }
+
+
         MovePlayer();
     }
 
@@ -109,6 +113,15 @@ public class PlayerMovement : MonoBehaviour
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
+        }
+        if (Input.GetKeyDown(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+        }
+        if (Input.GetKeyUp(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, beginYScale, transform.localScale.z);
         }
     }
 
@@ -142,7 +155,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            currentSpeed = origMoveSpeed * 1.7f; 
+            currentSpeed = origMoveSpeed * 1.7f;
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            currentSpeed = origMoveSpeed * 0.6f;
+
         }
         else
         {
@@ -179,31 +197,22 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
-    private void Crouch()
-    {
-        isCrouched = !isCrouched;
-        if (isCrouched) {
-            playerCollider.height = crouchHeight;
-        }
-        else
-        {
-            playerCollider.height = standHeight;
-        }
 
-    }
 
-   // void stairClimb()
-   // {
+
+
+    // void stairClimb()
+    // {
     //    RaycastHit hitLow;
     //    if (Physics.Raycast(RayCastToes.transform.position, transform.TransformDirection(Vector3.forward), out hitLow, 0.1f))
     //    {
-     //       RaycastHit hitHigh;
-     //       if (!Physics.Raycast(RayCastKnee.transform.position, transform.TransformDirection(Vector3.forward), out hitHigh, 0.2f)) 
-     //       {
-     //           rb.position -= new Vector3(0f, -smoothMotion * Time.deltaTime, 0f);
-     //       }
-     //   }
-   // }
+    //       RaycastHit hitHigh;
+    //       if (!Physics.Raycast(RayCastKnee.transform.position, transform.TransformDirection(Vector3.forward), out hitHigh, 0.2f)) 
+    //       {
+    //           rb.position -= new Vector3(0f, -smoothMotion * Time.deltaTime, 0f);
+    //       }
+    //   }
+    // }
 
     private bool OnSlope()
     {
@@ -220,13 +229,14 @@ public class PlayerMovement : MonoBehaviour
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
-    
+
 }
 
 
-        
 
-               
-                
-        
-    
+
+
+
+
+
+
