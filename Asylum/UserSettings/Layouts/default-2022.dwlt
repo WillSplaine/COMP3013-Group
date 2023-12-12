@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 134
+  controlID: 131
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -768,7 +768,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Materials/Mats/Walls/Metals/Corroded
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -776,16 +776,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Materials/Mats/Walls/Metals/Corroded
   m_LastFoldersGridSize: -1
   m_LastProjectPath: H:\Git\COMP3013-Group\Asylum
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: e48a0000
-    m_LastClickedID: 35556
-    m_ExpandedIDs: 00000000e28a0000e48a0000e68a0000e88a0000ea8a0000ec8a0000ee8a0000f08a0000f28a0000f48a0000f68a0000f88a000000ca9a3b
+    scrollPos: {x: 0, y: 259}
+    m_SelectedIDs: 9a8b0000
+    m_LastClickedID: 35738
+    m_ExpandedIDs: 00000000e48a0000e68a0000e88a0000ea8a0000ec8a0000ee8a0000f08a0000f28a0000f48a0000f68a0000f88a0000fa8a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -813,7 +813,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e28a0000e48a0000e68a0000e88a0000ea8a0000ec8a0000ee8a0000f08a0000f28a0000f48a0000f68a0000f88a0000
+    m_ExpandedIDs: 00000000e48a0000e68a0000e88a0000ea8a0000ec8a0000ee8a0000f08a0000f28a0000f48a0000f68a0000f88a0000fa8a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1374,9 +1374,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.9460196, y: 5.227072, z: 6.8981895}
+    m_Target: {x: -40.47439, y: 14.8493185, z: -3.5754173}
     speed: 2
-    m_Value: {x: -6.9460196, y: 5.227072, z: 6.8981895}
+    m_Value: {x: -40.47439, y: 14.8493185, z: -3.5754173}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1422,9 +1422,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.038219534, y: -0.73655564, z: -0.03252848, w: 0.67561275}
+    m_Target: {x: 0.05444902, y: -0.87253445, z: -0.11385879, w: -0.47354153}
     speed: 2
-    m_Value: {x: 0.038219534, y: 0.73655564, z: 0.03252848, w: -0.6756128}
+    m_Value: {x: 0.054237872, y: -0.8725954, z: -0.113855734, w: -0.47188157}
   m_Size:
     m_Target: 3.3521235
     speed: 2
