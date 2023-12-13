@@ -15,7 +15,7 @@ H:/Git/COMP3013-Group/Asylum
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-15345
+29594
 Successfully changed project path to: H:/Git/COMP3013-Group/Asylum
 H:/Git/COMP3013-Group/Asylum
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ H:/Git/COMP3013-Group/Asylum
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [14388] Host "[IP] 10.14.0.2 [Port] 0 [Flags] 2 [Guid] 1640254981 [EditorId] 1640254981 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R5O0II5) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [28512] Host "[IP] 10.14.0.2 [Port] 0 [Flags] 2 [Guid] 3111332145 [EditorId] 3111332145 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R5O0II5) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [14388] Host "[IP] 10.14.0.2 [Port] 0 [Flags] 2 [Guid] 1640254981 [EditorId] 1640254981 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R5O0II5) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [28512] Host "[IP] 10.14.0.2 [Port] 0 [Flags] 2 [Guid] 3111332145 [EditorId] 3111332145 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R5O0II5) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 23 workers.
-Refreshing native plugins compatible for Editor in 4.64 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 9.78 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.8f1 (b5eafc012955)
 [Subsystems] Discovering subsystems at path H:/Unity/2022.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -70,46 +70,46 @@ Initialize mono
 Mono path[0] = 'H:/Unity/2022.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unity/2022.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unity/2022.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56076
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56780
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unity/2022.3.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: H:/Unity/2022.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003436 seconds.
-- Loaded All Assemblies, in  0.321 seconds
+Registered in 0.003452 seconds.
+- Loaded All Assemblies, in  0.336 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.281 seconds
-Domain Reload Profiling: 602ms
-	BeginReloadAssembly (93ms)
+- Finished resetting the current domain, in  0.282 seconds
+Domain Reload Profiling: 618ms
+	BeginReloadAssembly (97ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (10ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
 	initialDomainReloadingComplete (45ms)
-	LoadAllAssembliesAndSetupDomain (140ms)
-		LoadAssemblies (93ms)
+	LoadAllAssembliesAndSetupDomain (146ms)
+		LoadAssemblies (97ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (138ms)
-			TypeCache.Refresh (137ms)
-				TypeCache.ScanAssembly (122ms)
+		AnalyzeDomain (143ms)
+			TypeCache.Refresh (142ms)
+				TypeCache.ScanAssembly (126ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (281ms)
+	FinalizeReload (283ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (195ms)
+		SetupLoadedEditorAssemblies (203ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (8ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (125ms)
-			ProcessInitializeOnLoadMethodAttributes (56ms)
+			ProcessInitializeOnLoadAttributes (128ms)
+			ProcessInitializeOnLoadMethodAttributes (59ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,8 +117,8 @@ Domain Reload Profiling: 602ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.641 seconds
-Refreshing native plugins compatible for Editor in 1.64 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.649 seconds
+Refreshing native plugins compatible for Editor in 1.75 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -126,48 +126,69 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.580 seconds
-Domain Reload Profiling: 1222ms
-	BeginReloadAssembly (179ms)
+- Finished resetting the current domain, in  0.615 seconds
+Domain Reload Profiling: 1264ms
+	BeginReloadAssembly (167ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (33ms)
 	RebuildCommonClasses (33ms)
 	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (34ms)
-	LoadAllAssembliesAndSetupDomain (384ms)
-		LoadAssemblies (296ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (405ms)
+		LoadAssemblies (306ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (189ms)
-			TypeCache.Refresh (165ms)
-				TypeCache.ScanAssembly (146ms)
+		AnalyzeDomain (190ms)
+			TypeCache.Refresh (163ms)
+				TypeCache.ScanAssembly (145ms)
 			ScanForSourceGeneratedMonoScriptInfo (18ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (580ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (616ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (433ms)
+		SetupLoadedEditorAssemblies (459ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (72ms)
-			ProcessInitializeOnLoadAttributes (329ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			BeforeProcessingInitializeOnLoad (78ms)
+			ProcessInitializeOnLoadAttributes (348ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3638 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 61 unused Assets / (2.1 MB). Loaded Objects now: 4097.
-Memory consumption went from 160.9 MB to 158.8 MB.
-Total: 4.942400 ms (FindLiveObjects: 0.503900 ms CreateObjectMapping: 0.215000 ms MarkObjects: 3.269500 ms  DeleteObjects: 0.952800 ms)
+Unloading 61 unused Assets / (2.1 MB). Loaded Objects now: 4099.
+Memory consumption went from 161.6 MB to 159.5 MB.
+Total: 5.018900 ms (FindLiveObjects: 0.505000 ms CreateObjectMapping: 0.442600 ms MarkObjects: 3.138700 ms  DeleteObjects: 0.931200 ms)
 
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.98 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 26 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (2.1 MB). Loaded Objects now: 4099.
+Memory consumption went from 94.1 MB to 92.1 MB.
+Total: 4.584100 ms (FindLiveObjects: 0.444800 ms CreateObjectMapping: 0.247600 ms MarkObjects: 2.992300 ms  DeleteObjects: 0.897900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -182,97 +203,110 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 105061.740208 seconds.
+  Time since last request: 110462.903153 seconds.
+  path: Assets/pbr_textures/materials
+  artifactKey: Guid(ccdc3002897a978458d8462ac906bafd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/pbr_textures/materials using Guid(ccdc3002897a978458d8462ac906bafd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73f3ef1ebe1b8f28c68bc612bed694a9') in 0.022180 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.039512 seconds.
+  path: Assets/pbr_textures/materials/pbr_material.mat
+  artifactKey: Guid(87294f02d9437b8479f6d772f8b00a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/pbr_textures/materials/pbr_material.mat using Guid(87294f02d9437b8479f6d772f8b00a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '244c90244776389b4ab12d88ce41a6de') in 0.851785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 11.348527 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Textures
+  artifactKey: Guid(265f34b27c21a4c439c17ff5f0baefab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Textures using Guid(265f34b27c21a4c439c17ff5f0baefab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eca7aed94c973a7cbf9e3fd21e3b0e36') in 0.001357 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.737968 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Textures/8k
+  artifactKey: Guid(6deb34bda154e5a49b37fe644c901445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Textures/8k using Guid(6deb34bda154e5a49b37fe644c901445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8be924499311974be1838234ae08e00') in 0.001211 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.030060 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Textures/8k/Plasticine_08_8K_BaseColor.png
+  artifactKey: Guid(be1aa5e8770a2ac4d9a155e549cdf396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Textures/8k/Plasticine_08_8K_BaseColor.png using Guid(be1aa5e8770a2ac4d9a155e549cdf396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57c3f93498cafc5ac2fe99d9d426587f') in 0.268587 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Textures/8k/Plasticine_08_8K_Roughness.png
+  artifactKey: Guid(f0975ff12c52f044da6a8b0bc84e363a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Textures/8k/Plasticine_08_8K_Roughness.png using Guid(f0975ff12c52f044da6a8b0bc84e363a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cfb2d2086027981e6c0fe0199e1d43f') in 0.143726 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 20.679512 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Textures/8k/Plasticine_08_8K_BaseColor.png
+  artifactKey: Guid(be1aa5e8770a2ac4d9a155e549cdf396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Textures/8k/Plasticine_08_8K_BaseColor.png using Guid(be1aa5e8770a2ac4d9a155e549cdf396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7fac8dd2042787f6554d231f969e674') in 0.014527 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Textures/8k/Plasticine_08_8K_Roughness.png
+  artifactKey: Guid(f0975ff12c52f044da6a8b0bc84e363a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Textures/8k/Plasticine_08_8K_Roughness.png using Guid(f0975ff12c52f044da6a8b0bc84e363a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '918dd5cec34d3719b11386e373dbf483') in 0.009385 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 5.858765 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Big.mat
+  artifactKey: Guid(2afe9b66eabe40b4aa4126880e65df61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Big.mat using Guid(2afe9b66eabe40b4aa4126880e65df61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c16fba5fa880f794d1f99063ed3a04f2') in 0.027815 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.006904 seconds.
   path: Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Green 3.mat
   artifactKey: Guid(856cca6f11a7c354aae90497cc1e46ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Green 3.mat using Guid(856cca6f11a7c354aae90497cc1e46ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cc458e2b135edff86d9c5a57e24ba0d') in 0.774774 seconds
+Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Green 3.mat using Guid(856cca6f11a7c354aae90497cc1e46ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78e273a9d80c8c732c6a93164dbd456e') in 0.026051 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000056 seconds.
+  Time since last request: 0.000023 seconds.
   path: Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Green 1.mat
   artifactKey: Guid(8aa8401cf933e15458afa26fbbf5c89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Green 1.mat using Guid(8aa8401cf933e15458afa26fbbf5c89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7618df4627e8fbbf10132dcf4b5bd26b') in 0.271170 seconds
+Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Green 1.mat using Guid(8aa8401cf933e15458afa26fbbf5c89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '889b322ce93f5e4fd3861d42e8806db7') in 0.040259 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Big.mat
-  artifactKey: Guid(2afe9b66eabe40b4aa4126880e65df61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Big.mat using Guid(2afe9b66eabe40b4aa4126880e65df61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2db1e3152566897142e0f46a766eace0') in 0.332091 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Green 2.mat
+  artifactKey: Guid(d318b6ff8c50c14409c9ed439135cd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Green 2.mat using Guid(d318b6ff8c50c14409c9ed439135cd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66641e07f849965f3b1a6a1d4569925d') in 0.032954 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 424.659182 seconds.
-  path: Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Big.mat
-  artifactKey: Guid(2afe9b66eabe40b4aa4126880e65df61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Big.mat using Guid(2afe9b66eabe40b4aa4126880e65df61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '911bb0d3d6934e4a615241c8b4119265') in 0.296100 seconds
+  Time since last request: 0.000047 seconds.
+  path: Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Blue.mat
+  artifactKey: Guid(8b31a57417328dc4b991a3734776c360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EmacEArt/PlasticineWorld/Materials/8K/Plasticine_08_8k_Small Blue.mat using Guid(8b31a57417328dc4b991a3734776c360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef7657943caaf6ff44f870b3167240c1') in 0.050653 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 4
-========================================================================
-Received Import Request.
-  Time since last request: 3875.181484 seconds.
-  path: Assets/PBRMaterials
-  artifactKey: Guid(e56ed6744876c3842977356a899c7615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PBRMaterials using Guid(e56ed6744876c3842977356a899c7615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c661413695465ee76125910c9e8acd68') in 0.001152 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 1.493596 seconds.
-  path: Assets/PBRMaterials/PBRWoodMaterials
-  artifactKey: Guid(51666825dbc3600469a8c8c40a600232) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PBRMaterials/PBRWoodMaterials using Guid(51666825dbc3600469a8c8c40a600232) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a502a484815b6a6d5b8fffcdbbb0400') in 0.000638 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.957018 seconds.
-  path: Assets/PBRMaterials/PBRWoodMaterials/Materials
-  artifactKey: Guid(295d56a029fa5484ca0e6e5c8b75f1c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PBRMaterials/PBRWoodMaterials/Materials using Guid(295d56a029fa5484ca0e6e5c8b75f1c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '378117daff8989f762ff50f6ff9797ec') in 0.000646 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Assets/PBRMaterials/PBRWoodMaterials/Materials/WoodRough1.mat
-  artifactKey: Guid(0ad2e8d2c7f13e249b9738772eb1151d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PBRMaterials/PBRWoodMaterials/Materials/WoodRough1.mat using Guid(0ad2e8d2c7f13e249b9738772eb1151d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '852136c8c03e1c68bfe14948d4323e2e') in 0.308055 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/PBRMaterials/PBRWoodMaterials/Materials/WoodReinforced1.mat
-  artifactKey: Guid(0c78d08393d68fe4584a24393e825e13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PBRMaterials/PBRWoodMaterials/Materials/WoodReinforced1.mat using Guid(0c78d08393d68fe4584a24393e825e13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24000a960910006cd12942ee49aa9dd2') in 0.017274 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 278.033392 seconds.
-  path: Assets/PBRMaterials/PBRMetalMaterials/Material/MetalBare2.mat
-  artifactKey: Guid(22497e0e64f6037409379f37c1af9999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PBRMaterials/PBRMetalMaterials/Material/MetalBare2.mat using Guid(22497e0e64f6037409379f37c1af9999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69f23f374eb4eb95d5e0f24b05ca4ed3') in 0.302237 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 176.873452 seconds.
-  path: Assets/PBRMaterials/PBRMetalMaterials/Material/MetalBare2.mat
-  artifactKey: Guid(22497e0e64f6037409379f37c1af9999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PBRMaterials/PBRMetalMaterials/Material/MetalBare2.mat using Guid(22497e0e64f6037409379f37c1af9999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f9b97af972a299a6e9fcaf5e0cc9ef8') in 0.014707 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 0.000077 seconds.
-  path: Assets/PBRMaterials/PBRMetalMaterials/Material/MetalGalvanized.mat
-  artifactKey: Guid(4f873e0411479e045ac4fc76fde8e45f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PBRMaterials/PBRMetalMaterials/Material/MetalGalvanized.mat using Guid(4f873e0411479e045ac4fc76fde8e45f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '909220aaba03dafd56f38ac94e57b87d') in 0.010215 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

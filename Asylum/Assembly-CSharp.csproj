@@ -59,12 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Environment\JumpScares.cs" />
+    <Compile Include="Assets\Electric Torch\Script\ElectricTorchOnOff.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCam.cs" />
     <Compile Include="Assets\Scripts\Environment\MyDoorCont.cs" />
     <Compile Include="Assets\Scripts\Environment\FlashlightPickup.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Controller.cs" />
+    <Compile Include="Assets\Electric Torch\Script\ChooseLightCookie.cs" />
     <Compile Include="Assets\Scripts\Player\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Environment\OnSight.cs" />
+    <Compile Include="Assets\Electric Torch\Script\BatteryPowerPickup.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Hover.cs" />
     <Compile Include="Assets\Scripts\Player\SanityController.cs" />
     <Compile Include="Assets\Scripts\Settings\SetVolume.cs" />
@@ -72,6 +75,7 @@
     <Compile Include="Assets\Scripts\UI\GameEnd.cs" />
     <Compile Include="Assets\Scripts\Environment\Slow Sanity Collider.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInteractions.cs" />
+    <Compile Include="Assets\Electric Torch\Script\EmissionMaterialGlassTorchFadeOut.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Environment\PillPickup.cs" />
     <Compile Include="Assets\Scripts\Settings\SetSensitivity.cs" />
